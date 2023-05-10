@@ -1,0 +1,524 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: [first] 50px [line2] 300px [second] 250px [third] 300px [fourth] 50px [columnend];
+  grid-template-rows: [row1start] 200px [row1end] 100px [row2mid] 100px [row2midend] 50px [row2] 50px [row3] 100px [row4] 150px [rowend];
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.box2 {
+  display: flexbox;
+  grid-column-start: line2;
+  grid-column-end: fourth;
+  grid-row-start: row2mid;
+  grid-row-end: row2midend;
+  /* background-color: rgb(7, 7, 7); */
+  justify-content: center;
+  /* display: none; */
+}
+.box3 {
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: row1start;
+  grid-row-end: row1end;
+  /* background-color: rgb(255, 127, 144); */
+}
+.box4 {
+  /* background-color: aqua; */
+  display: flexbox;
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: row2;
+  grid-row-end: row3;
+  /* width: 49ch; */
+  animation: fadein 2s steps(72), step-end blink 0.5s infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 3px solid; */
+  font-family: monospace;
+  /* font-size: 2em; */
+  color: rgb(230, 216, 216);
+  /* position: absolute; */
+  /* margin-left: 60px; */
+  /* top: 45%; */
+  /* transform: translateY(-50%); */
+  margin-top: 20px;
+}
+.box5 {
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: row2midend;
+  grid-row-end: row2;
+  display: flexbox;
+  text-align: justify;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+p [class='typing-demo'] {
+  grid-row-start: row2midend;
+}
+span[id='whereText'] {
+  color: rgb(30, 210, 156);
+  font-weight: bold;
+}
+span {
+  display: inline-block;
+  opacity: 1;
+  filter: blur(4px);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  margin-left: 180px;
+  margin-top: 30px;
+}
+span:nth-child(2) {
+  animation: fade-in 1s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(3) {
+  animation: fade-in 1.2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(4) {
+  animation: fade-in 1.4s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(5) {
+  animation: fade-in 1.6s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(6) {
+  animation: fade-in 1.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(7) {
+  animation: fade-in 2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(8) {
+  animation: fade-in 2.2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(9) {
+  animation: fade-in 2.4s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(10) {
+  animation: fade-in 2.6s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(11) {
+  animation: fade-in 2.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(12) {
+  animation: fade-in 3s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(13) {
+  animation: fade-in 3.2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(14) {
+  animation: fade-in 3.4s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(15) {
+  animation: fade-in 3.6s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(16) {
+  animation: fade-in 3.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(17) {
+  animation: fade-in 4s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(18) {
+  animation: fade-in 4.2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(19) {
+  animation: fade-in 4.4s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(20) {
+  animation: fade-in 4.6s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(21) {
+  animation: fade-in 4.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+body {
+  background-color: black;
+  /* background-color: rgba(12, 12, 12, 1); */
+  display: flexbox;
+  /* background-image: url('sunsetBackground03.jpg'); */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  /* background-blend-mode: color; */
+}
+
+/* Image on First Page*/
+img[alt='compass-pic'] {
+  max-width: 250px;
+  animation: rotate 15s linear infinite;
+  transition: opacity 0.5s;
+}
+/* Image on Second Page*/
+img[class='compass-eye-2'] {
+  display: none;
+  max-width: 250px;
+  animation: rotate 15s linear infinite, fadeIn 2s;
+  /* display: inline-flex; */
+  /* margin-bottom: 100px; */
+  transition: opacity 0.5s;
+  /* margin-left: 800px; */
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.box5 #btnRegister {
+  height: 75%;
+  width: 80px;
+  margin: 10px;
+  filter: blur(4px);
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.box5 #btnLogin {
+  height: 75%;
+  width: 80px;
+  margin: 10px;
+  float: right;
+  filter: blur(4px);
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+input[id='btnRegister']:hover,
+#submit:hover {
+  background-color: rgb(161, 160, 160);
+  cursor: pointer;
+}
+.submitLogin:hover {
+  background-color: rgb(153, 51, 51);
+  cursor: pointer;
+}
+.submitLogin {
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* display: none; */
+}
+form[id='regform'],
+[id='welcomeMsg'] {
+  color: rgb(0, 255, 149);
+  animation: ease-in-out 2s;
+}
+.submitRegister:hover {
+  background-color: rgb(153, 51, 51);
+  cursor: pointer;
+}
+.submitRegister {
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  /* display: k; */
+  font-size: 16px;
+  /* display: none; */
+}
+form[class='regForm'] input[type='button'] {
+  margin-left: 15px;
+}
+form[class='regForm'] input[type='button']:hover {
+  background-color: rgb(153, 51, 51);
+  cursor: pointer;
+}
+form[class='loginForm'] input[type='button'] {
+  margin-left: 15px;
+}
+form[class='loginForm'] input[type='button']:hover {
+  background-color: rgb(153, 51, 51);
+  cursor: pointer;
+}
+button[type='button'] {
+  margin-right: 1.4em;
+  border-radius: 5px;
+  width: 7em;
+  height: 2.5em;
+  margin: 0.5em;
+  font-size: medium;
+}
+form[class='regForm'] {
+  /* animation: fadeIn 3s; */
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: row3;
+  grid-row-end: rowend;
+  display: none;
+}
+form[class='loginForm'] {
+  /* animation: fadeIn 3s; */
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: row3;
+  grid-row-end: rowend;
+  display: none;
+}
+input[type='button']:hover {
+  background-color: rgb(49, 40, 40);
+  cursor: pointer;
+  color: rgb(235, 235, 241);
+  font-weight: bold;
+}
+label {
+  color: white;
+}
+form[id='regForm'] input {
+  width: 90%;
+  margin: 5px;
+  padding: 10px;
+}
+form[id='loginForm'] input {
+  width: 90%;
+  margin: 5px;
+  padding: 10px;
+}
+h3 {
+  margin-top: 40px;
+  color: white;
+  text-align: center;
+}
+h3[class='regTitle'] {
+  color: white;
+  margin: 1px;
+  animation: fadeIn 2s;
+  display: none;
+}
+h3[class='loginTitle'] {
+  color: white;
+  margin: 1px;
+  animation: fadeIn 2s;
+  display: none;
+}
+/*////////////////////////////// Login Page ///////////////////////////////////////////*/
+.container-2 {
+  display: none;
+  grid-template-columns: [startcolumn] 400px [first] 400px [line2] 300px [third] 300px [fourth] 50px [columnend];
+  grid-template-rows: [grid2start] 100px [first ] 100px[row1mid] 50px[row1end] 550px [rowend];
+
+  margin-top: 50px;
+  margin-bottom: 150px;
+
+  justify-content: center;
+}
+.box1-grid2 {
+  display: flexbox;
+  text-align: center;
+}
+.fade-out {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.fade-out-hidden {
+  opacity: 0;
+}
+.box1 {
+  grid-column-start: first;
+  grid-column-end: line2;
+  grid-row-start: grid2start;
+  grid-row-end: row1end;
+  /* background-color: aquamarine; */
+  justify-content: center;
+  display: none;
+}
+#loginPageText {
+  grid-column-start: startcolumn;
+  grid-column-end: first;
+  grid-row-start: row1mid;
+  grid-row-end: row1end;
+  float: left;
+  margin-left: 0px;
+  /* display: inline-block; */
+  opacity: 1;
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  filter: blur(4px);
+  color: rgb(233, 96, 96);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.5em;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+#loginMsg {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  float: left;
+  display: flex;
+}
+#loginName {
+  color: rgb(46, 129, 238);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  filter: blur(4px);
+  float: left;
+  display: flex;
+  grid-column-start: second;
+  grid-row-start: first;
+  grid-row-end: row1start;
+}
+#timerLogin {
+  color: rgb(46, 129, 238);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  filter: blur(4px);
+  float: left;
+  display: flex;
+  grid-column-start: grid2column2start;
+}
+#currentTime {
+  color: rgb(46, 129, 238);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  filter: blur(4px);
+  float: left;
+  display: flex;
+  grid-column-start: startcolumn;
+  grid-row-start: grid2start;
+}
+div[id='loginPageText'] {
+  grid-column-start: startcolumn;
+  grid-column-end: first;
+  grid-row-start: first;
+  grid-row-end: row1end;
+  text-align: left;
+  float: left;
+  display: none;
+}
+.displayBox {
+  grid-column-start: second;
+  grid-column-end: third;
+  grid-row-start: grid2start;
+  grid-row-end: row1start;
+  text-align: center;
+  display: none;
+}
+.sidebar {
+  border: 10em;
+  opacity: 1;
+  grid-row-start: row1end;
+  grid-row-end: rowend;
+  grid-column-start: startcolumn;
+  grid-column-end: first;
+}
+/* .workouts {
+  list-style: none;
+  height: 50vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  float: left;
+  border: 10em;
+  border-color: black;
+} */
+
+/* .workouts::-webkit-scrollbar {
+  width: 0;
+} */
+.form__compass {
+  border-color: black;
+  border-radius: 5px;
+  /* padding: 1.5rem 2.75rem; */
+  /* margin-bottom: 1.75rem; */
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 50px);
+  gap: 0.5rem 1.5rem;
+  float: left;
+
+  /* Match height and activity boxes */
+  /* height: 9.25rem; */
+  transition: all 0.5s, transform 1ms;
+}
+.form__btn {
+  max-width: 100px;
+  max-height: 100px;
+}
+.form__input {
+  width: 80%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  /* border: none; */
+  border-radius: 1px;
+  background-color: var(--color-light--3);
+  transition: all 0.2s;
+}
+input[class='form__input']:focus {
+  outline: none;
+  background-color: rgb(233, 157, 157);
+}
+input[class='form__input'] {
+  float: left;
+}
+.form__label {
+  float: left;
+  margin-right: 100px;
+  display: none;
+}
+div.form__row {
+  border: 10em;
+  border-color: black;
+}
+ul.workouts {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 100%;
+  grid-row-start: row1end;
+  grid-row-end: rowend;
+  grid-column-start: first;
+  grid-column-end: columnend;
+  opacity: 0.9;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

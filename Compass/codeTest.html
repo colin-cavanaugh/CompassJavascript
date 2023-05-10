@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
+    <!-- <script type="module" src="map.js"></script> -->
+    <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKW4sTHJueQkLOG7LLHKq5Tlej0GGiE8k=weekly"
+    defer
+  ></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <title>Nowhere</title>
+    <script>
+      // // Register Input From Form //
+      function subForm() {
+        $.ajax({
+          // This line starts an AJAX request using the jQuery library. The $ symbol refers to the jQuery object.
+          url: 'https://api.apispreadsheets.com/data/c9zrbTPZJIxqznMc/',
+          // This line sets the URL for the API endpoint that the AJAX request will be sent to.
+          // headers: headers,
+          type: 'Post',
+          // This line sets the HTTP method for the request to "POST".
+          data: $('#regForm').serializeArray(),
+          // This line sets the data to be sent with the request to the serialized form data from an element with the ID "regForm". The serializeArray() method is used to convert the form data into an array of objects.
+          success: function () {
+            // This line defines a callback function to be executed if the request is successful
+            // alert("Success!");
+            console.log('Ajax call: Success');
+          },
+          error: function () {
+            // alert("SHIIIIIT!");
+          },
+        });
+      }
+    </script>
+    <link rel="stylesheet" href="codeTest.css" />
+
+  <script defer src="map.js"></script>
+  <!-- <link rel="stylesheet" href="/path/to/leaflet.css" /> -->
+<!-- <script defer src="/path/to/leaflet.js"></script> -->
+  </head>
+  <body class="fade-out">
+    
+    <div class="grid-container">
+      <div class="box2">
+        <span>W</span>
+        <span>e</span>
+        <span>l</span>
+        <span>c</span>
+        <span>o</span>
+        <span>m</span>
+        <span>e</span>
+        &nbsp;
+        <span>t</span>
+        <span>o</span>
+        &nbsp;
+        <span>n</span>
+        <span>o</span>
+        <span>w</span>
+        <span>h</span>
+        <span>e</span>
+        <span>r</span>
+        <span>e</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span id="whereText">Where would you like to go?</span>
+      </div>
+      <div class="box3">
+        <img
+          class="compassEye"
+          alt="compass-pic"
+          src="compassEye.png"
+          id="compass-pic"
+        />
+      </div>
+      <div class="box4">
+        <h3 class="regTitle" id="regTitle">Register</h3>
+        <h3 class="loginTitle" id="loginTitle">Login</h3>
+      </div>
+
+      <form onsubmit="subForm();validateForm()" class="regForm" id="regForm">
+        <label class="label-username" id="nameLabel" for="username"
+          >Username:</label
+        >
+        <div id="welcomeMsg" name="welcomeMsg"></div>
+        <input type="username" id="username" name="username" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="password">Password:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <input type="submit" value="Register" class="submitRegister" />
+      </form>
+      <form onsubmit="login(); sessionLogin()" class="loginForm" id="loginForm">
+        <label for="username">Username:</label><br />
+        <input
+          type="text"
+          id="user-login"
+          alt="logUser"
+          name="username"
+          required
+        /><br />
+        <!-- <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email-login"
+          alt="logEmail"
+          name="email"
+          required
+        /><br /> -->
+        <label for="password">Password:</label><br />
+        <input
+          type="password"
+          id="pass-login"
+          alt="logPassword"
+          name="password"
+          required
+        /><br /><br />
+        <input
+          type="button"
+          value="Login"
+          class="submitLogin"
+          onclick="login()"
+        />
+      </form>
+
+      <div class="box5">
+        <input
+          type="button"
+          value="Register"
+          id="btnRegister"
+          onclick="showRegForm()"
+        />
+        <input
+          type="button"
+          value="Login"
+          id="btnLogin"
+          onclick="showLoginForm()"
+        />
+      </div>
+    </div>
+    <!-- grid-container end -->
+    <div class="container-2">
+      <div id="timerLogin"></div>
+      <div id="currentTime"></div>
+      <div class="displayBox">
+        <div id="loginName"></div>
+      </div>
+      <div class="box1">
+        <img
+          class="compass-eye-2"
+          alt="compass-eye-2"
+          src="compassPic02.png"
+          id="image"
+        />
+      </div>
+      <!-- <div id="loginPageText"> -->
+        <div id="loginPageText">Where would you like to go?</span>
+        <!-- <span>P</span>
+        <span>l</span>
+        <span>e</span>
+        <span>a</span>
+        <span>s</span>
+        <span>e</span>
+        &nbsp;
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
+        <span>e</span>
+        <span>r</span>
+        &nbsp;
+        <span>r</span>
+        <span>o</span>
+        <span>u</span>
+        <span>t</span>
+        <span>e</span> -->
+      </div>
+      <div class="sidebar">
+        <ul class="workouts">
+          <form class="form__compass">
+            <div class="form__row">
+              <label class="form__label">Nickname</label>
+              <input class="form__input" placeholder="nickname">
+            </div>
+            <div class="form__row">
+              <label class="form__label">Address Line</label>
+              <input
+                class="form__input--address"
+                placeholder="address"
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">Postal Code</label>
+              <input
+                class="form__input--postal"
+                placeholder="postal code"
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">Locality</label>
+              <input
+                class="form__input--locality"
+                placeholder="locality"
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">State</label>
+              <input
+                class="form__input--state"
+                placeholder="state"> </div>
+              <div class="form__row">
+                <label class="form__label">Country</label>
+                <input
+                  class="form__input--country"
+                  placeholder="country"></div>
+                <div class="form__row">
+                  <label class="form__label">Longitude</label>
+                  <input
+                    class="form__input--longitude"
+                    placeholder="longitude"></div>
+                  <div class="form__row">
+                    <label class="form__label">Latitude</label>
+                    <input
+                      class="form__input--latitude"
+                      placeholder="latitude">
+                    </div>
+                    <button class="form__btn">OK</button> 
+                    </form>  
+                  </ul>     
+                </div>
+                <div id="map"></div>
+    <!--///////////////////////// New Grid Container ///////////////////////////-->
+
+    <script defer src="codeTest.js"></script>
+    <script defer src="validation.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKW4sTHJueQkLOG7LLHKq5Tlej0GGiE8k&callback=initMap">
+</script>
+  </body>
+</html>
